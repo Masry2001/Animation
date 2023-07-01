@@ -11,7 +11,7 @@ body {
 .load {
     display: flex;
     justify-content: center;
-    margin: 150px auto;
+    margin: 120px auto;
 }
 
 .load div {
@@ -52,8 +52,8 @@ body {
 }
 
 .dotted-loader {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     border-width: 4px;
     border-color: aqua;
     border-style: solid solid dotted dotted;
@@ -122,3 +122,52 @@ body {
         -o-transform: rotate(-360deg);
 }
 }
+
+/* start of loading */
+.loading {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    margin: -15px auto;
+    color: aqua;
+    -webkit-transform: translate(-50%);
+    -moz-transform: translate(-50%);
+    -ms-transform: translate(-50%);
+    -o-transform: translate(-50%);
+}
+
+.loading span {
+    font-size: 45px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    line-height: 1;
+    mix-blend-mode: difference;
+
+}
+
+.loading::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50px;
+    height: 100%;
+    background-color: aqua;
+    animation: move 4s linear infinite;
+    -webkit-animation: move 4s linear infinite;
+    z-index: -1;
+}
+
+@keyframes move {
+    0% {
+        left: 0;
+    }
+    50% {
+        left: calc(100% - 50px);
+    } 
+    100% {
+        left: 0%;
+    }
+}
+
+/* end of loading */
